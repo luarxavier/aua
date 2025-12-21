@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Stack+Sans+Notch:wght@200..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Menu de navegação que fica flutuando por cima da imagem de fundo -->
+    <nav class="menu">
+        
+        <!-- Logo circular à esquerda -->
+        <div class="logo">
+            <img src="Imagens/logo.png" alt="Logotipo">
+        </div>
+
+        <!-- Lista de links do menu (a "pílula" branca) -->
+        <!-- Usei flexbox aqui para deixar os links lado a lado -->
+        <ul class="menuT">
+            
+            <!-- Link "Work" com dropdown - quando passo o mouse abre um menu -->
+            <li class="bt dropdown">
+                <a href="works.html">Work</a>
+                
+                <!-- Submenu que aparece quando passo o rato -->
+                <ul class="dropdown-content">
+                    <li class="bt dropdown"><a href="#">Main Works</a></li>
+                    <li class="bt dropdown"><a href="#">Projects</a></li>
+                    <li class="bt dropdown"><a href="#">YesYesNo</a></li>
+                    <li class="bt dropdown"><a href="#">Online Store</a></li>
+                    <li class="bt dropdown"><a href="#">Exhibitions</a></li>
+                </ul>
+            </li>
+
+            <li class="bt">
+                <a href="#">About</a>
+            </li>
+
+            <li class="bt dropdown">
+                <a href="#">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Seção do banner/hero com imagem de fundo a ocupar toda a tela -->
+    <section class="slider">
+        
+        <!-- Grupo com texto + botão CTA sobre o hero -->
+        <div class="hero-group">
+          <div class="hero-labels">
+            <span>Ver.</span>
+            <span>Registar.</span>
+            <span>Cuidar.</span>
+            <span class="give-you">Juntos.</span>
+          </div>
+
+          <a class="hero-cta" href="works.html">DOWNLOAD</a>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

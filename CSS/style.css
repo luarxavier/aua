@@ -1,0 +1,1270 @@
+/* ------------------------------------------ BASE (vale pro site todo) ------------------------------------------------------*/
+
+body{
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* ------------------------------------------- HEADER PADRÃO (todas as páginas) -------------------------------------------- */
+
+/* Container do header - uso flexbox para alinhar logo e menu */
+.site-header{
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 28px 0;
+
+  display: flex;               /* Coloca os filhos lado a lado */
+  align-items: center;         /* Centraliza verticalmente */
+  justify-content: space-between;  /* Empurra logo e menu para lados opostos */
+
+  position: relative;
+  z-index: 50;
+}
+
+/* Logo circular de 56x56px */
+.site-header .logo{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;  /* Faz ficar redondo */
+  overflow: hidden;
+}
+
+.site-header .logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Garante que a imagem preenche sem distorcer */
+  display: block;
+
+  position: static;
+  left: auto;
+  top: auto;
+}
+
+/* No index o logo fica absoluto por cima do banner */
+.index-page .logo img{
+  position: absolute;
+}
+
+/* ------------------------------------------ INDEX: header por cima do fundo ------------------------------------------------ */
+.index-page .site-header{
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+}
+
+/* -------------------------------------------------- BURGER: remove a setinha do details ------------------------------------ */
+.site-burger summary{
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 22px;
+  line-height: 1;
+}
+.site-burger summary::-webkit-details-marker{
+  display: none;  /* Remove a seta nativa */
+}
+
+
+/*  ------------------------ HOME / INDEX - MENU (topo transparente sobre o banner) ----------------------------------------- */
+
+/* Menu que flutua por cima da imagem de fundo */
+.menu{
+  position: absolute;  /* Fica "solto" por cima do conteúdo */
+  top: 24px;
+  left: 24px;
+  right: 24px;
+
+  display: flex;                    /* Logo à esquerda, links à direita */
+  align-items: center;              /* Alinha verticalmente */
+  justify-content: space-between;   /* Espaça os elementos */
+
+  background: transparent;
+  width: auto;
+  box-shadow: none;
+
+  z-index: 10;
+}
+
+/* A "borda" branca com os links */
+.menuT{
+  display: flex;           /* Links ficam lado a lado */
+  list-style-type: none;
+
+  padding: 0.5px 18px;
+  gap: 14px;              /* Espaço entre cada link */
+  margin-right: 30px;
+
+}
+
+/* Logo dentro do menu */
+.menu .logo{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  overflow: hidden;
+  
+}
+
+.menu .logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Cada botão do menu */
+.bt{
+  position: relative;
+  background-color: transparent;
+  border-radius: 4px;
+  margin: 8px 4px;
+  transition: all 0.3 ease;
+}
+
+.bt a{
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+
+  padding: 14px 20px;
+  text-decoration: none;
+
+  background-color: transparent;
+  transition: all 0.3 ease; 
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  border-radius: 4px;
+}
+
+/* Cor quando passo o rato */
+.bt:hover a{
+  color: rgb(98, 98, 98);
+}
+
+/*  --------------------------------------------- HOME / INDEX - DROPDOWN (menu que abre ao passar o rato) -------------------- */
+
+.dropdown{
+  position: relative;
+}
+
+/* Caixa que aparece quando passo o rato */
+.dropdown-content{
+  display: none;            /* Escondido por padrão */
+  position: absolute;
+
+  background-color: white;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  z-index: 1000;
+  list-style-type: none;
+
+  padding: 8px 0;
+  margin: 0;
+  border-radius: 6px;
+
+  top: 100%;
+  right: 0;
+
+  animation: fadeIn 0.3s ease;
+}
+
+/* Mostra o dropdown ao passar o rato */
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+.dropdown-content li{
+  display: block;
+  margin: 0;
+}
+
+.dropdown-content li a{
+  color: #333;
+  padding: 12px 20px;
+
+  text-decoration: none;
+  display: block;
+  text-align: left;
+
+  background-color: transparent;
+  transition: all 0.2 ease;
+  font-weight: normal;
+
+  border-radius: 0;
+}
+
+/* Hover dos itens */
+.dropdown-content li a:hover{
+  background-color: #f1f1f1;
+  color: rgb(98, 98, 98);
+  padding-left: 25px;  /* "Empurra" o texto para a direita */
+}
+
+.dropdown:hover a{
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(0, 0, 0);
+}
+
+/* ---------------------------------------------- HOME / INDEX - SLIDER / HERO (imagem de fundo a ecrã inteiro) ---------------- */
+
+.slider{
+  width: 100%;
+  height: 100vh;  /* Altura toda do ecrã */
+  position: relative;
+
+  background-image: url("../imagens/fundo6.jpg");
+  background-size: cover;       /* Preenche sem distorcer */
+  background-position: center;
+}
+
+/* Texto no banner - uso flexbox para centralizar */
+.texto{
+  width: 100%;
+  height: 600px;
+  text-align: center;
+
+  display: flex;              /* Para centralizar o conteúdo */
+  flex-direction: column;     /* Empilha os elementos verticalmente */
+  justify-content: center;    /* Centraliza no meio */
+}
+
+.slider-titulo{
+  font-size: 30px;
+  font-weight: bolder;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+}
+
+.slider-texto{
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  text-align: center;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.slider-bt{
+  width: 100px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #8cefea;
+  color: #002a85;
+
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* -------------------------------------HOME / INDEX - SERVIÇOS (cards em flexbox) ---------------------------------------------- */
+
+.servicos{
+  display: flex;              /* Cards ficam lado a lado */
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 90%;
+  height: auto;
+
+  background-color: #015a45;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  justify-content: space-around;  /* Distribui o espaço */
+  flex-wrap: wrap;                /* Quebra linha se não couber */
+}
+
+.thumb{
+  width: 350px;
+  height: 350px;
+  background-color: #30dba2;
+}
+
+.ts{
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.titulo_servicos{
+  color: #f1f1f1;
+  font-size: 50px;
+}
+
+.imagem_thumb{
+  width: 100%;
+  height: 70%;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.imagem_thumb img{
+  height: 100%;
+}
+
+.thumb_texto{
+  text-align: center;
+}
+
+/* ------------------------------------------ HOME / INDEX - SOBRE (layout com flexbox)-------------------------------------- */
+
+.sobre{
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+
+  height: auto;
+  padding: 10px;
+
+  background-color: brown;
+
+  display: flex;              /* Organiza as divisões */
+  flex-wrap: wrap;            /* Permite quebra de linha */
+  align-content: start;
+}
+
+.divisao{
+  width: 48%;
+  height: 200px;
+  background-color: burlywood;
+
+  padding: 1%;
+  display: flex;
+}
+
+.divisao2{
+  width: 48%;
+  height: 200px;
+  background-color: rgb(49, 28, 0);
+
+  padding: 1%;
+  display: flex;
+}
+
+.esquerda{
+  width: 40%;
+  height: 100%;
+  background-color: cornflowerblue;
+  padding: 5%;
+}
+
+.direita{
+  width: 40%;
+  height: 100%;
+  background-color: rgb(133, 6, 149);
+  padding: 5%;
+}
+
+/* ---------------------------------------------- FOOTER (geral + overlay)---------------------------------------------- */
+
+.footer{
+  width: 100%;
+  padding: 16px 0;
+
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+}
+
+/* Footer que fica por cima de uma imagem */
+.footer--overlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+
+  margin: 0;
+  padding: 16px 0;
+
+  text-align: center;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Animação do dropdown */
+@keyframes fadeIn{
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 0.5; transform: translateY(0); }
+}
+
+/* ---------------------------------------------- PÁGINA 02 | WORKS ---------------------------------------------- */
+
+.works-page .logo{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(0,0,0,0.08);
+}
+
+/* Header: logo à esquerda, burger à direita */
+.works-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* Separa os dois lados */
+  margin-bottom: 40px;
+}
+
+.works-page .logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  position: static;
+  left: auto;
+  top: auto;
+}
+
+/* Navegação secundária - links em linha */
+.works-page .works-nav{
+  padding: 0 40px 18px;
+  display: flex;              /* Links lado a lado */
+  gap: 28px;                  /* Espaço entre links */
+  align-items: center;
+
+  width: fit-content;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.works-page .works-nav a{
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+}
+.works-page .works-nav a:visited{
+  color: #111;
+}
+
+.works-page .works-nav a:hover{
+  color: rgb(98, 98, 98);
+}
+
+/* Menu hambúrguer */
+.works-page .burger{
+  background: transparent;
+  border: 0;
+  font-size: 28px;
+  cursor: pointer;
+  position: relative;
+}
+
+.works-page .burger summary{
+  list-style: none;
+  cursor: pointer;
+
+  font-size: 28px;
+  line-height: 1;
+  user-select: none;
+}
+
+.works-page .burger summary::-webkit-details-marker{
+  display: none;
+}
+
+/* Dropdown do burger */
+.works-page .burger-menu{
+  position: absolute;
+  top: 44px;
+  right: 0;
+
+  background: #fff;
+  width: 160px;
+  padding: 12px 0;
+
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  display: none;  /* Escondido até abrir */
+}
+
+.works-page .burger[open] .burger-menu{
+  display: block;  /* Mostra quando o details está aberto */
+}
+
+.works-page .burger-menu a,
+.works-page .burger-menu span{
+  display: block;
+  padding: 10px 16px;
+
+  font-size: 14px;
+  text-decoration: none;
+  color: #111;
+}
+
+.works-page .burger-menu a:hover{
+  background: rgba(0,0,0,0.05);
+}
+
+.works-page .burger-menu .disabled{
+  color: rgba(0,0,0,0.35);
+  cursor: not-allowed;
+}
+
+/* Layout principal: texto + vídeo lado a lado com CSS Grid */
+.works-page .works-main{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0;
+  padding: 28px 0 20px;
+
+  display: grid;                           /* Uso grid para 2 colunas */
+  grid-template-columns: 1.05fr 0.95fr;   /* Texto um bocado maior que vídeo */
+  gap: 120px;                              /* Espaço grande entre as colunas */
+  align-items: center;
+}
+
+.works-page .works-title{
+  font-size: 72px;
+  line-height: 0.95;
+  margin: 0 0 18px;
+  font-weight: 300;
+}
+.works-page .works-title strong{
+  font-weight: 800;
+}
+
+.works-page .works-text p{
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #222;
+  margin: 0 0 14px;
+}
+
+.works-page .works-cta{
+  display: inline-block;
+  margin-top: 18px;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.works-page .works-media video{
+  width: 100%;
+  max-width: 450px;
+
+  aspect-ratio: 1 / 1;  /* Vídeo quadrado */
+  object-fit: cover;
+
+  border-radius: 6px;
+  display: block;
+
+  pointer-events: none;
+}
+
+.works-page .works-footer{
+  margin-top: auto;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* ---------------------------------------- WORKS 2 (página de grid com cards) ---------------------------------------------- */
+
+.works2-page{
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* Header: logo+título à esquerda, burger à direita */
+.works2-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/* Container que centraliza tudo */
+.works2-shell{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;  /* Centraliza */
+  padding: 46px 70px 60px;
+}
+
+/* Logo + título lado a lado */
+.works2-brand{
+  display: flex;        /* Os dois ficam juntos */
+  align-items: center;
+  gap: 18px;
+}
+
+.works2-logo{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.works2-title{
+  margin: 0;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.works2-burger{
+  position: relative;
+}
+
+.works2-burger summary{
+  list-style: none;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+  user-select: none;
+}
+.works2-burger summary::-webkit-details-marker{
+  display: none;
+}
+
+.works2-burgerMenu{
+  position: absolute;
+  top: 44px;
+  right: 0;
+
+  background: #fff;
+  width: 160px;
+  padding: 12px 0;
+
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  display: none;
+}
+.works2-burger[open] .works2-burgerMenu{
+  display: block;
+}
+
+.works2-burgerMenu a,
+.works2-burgerMenu span{
+  display: block;
+  padding: 10px 16px;
+
+  font-size: 14px;
+  text-decoration: none;
+  color: #111;
+}
+.works2-burgerMenu a:hover{
+  background: rgba(0,0,0,0.05);
+}
+.works2-burgerMenu .disabled{
+  color: rgba(0,0,0,0.35);
+  cursor: not-allowed;
+}
+
+/* Grid de trabalhos: 2 colunas */
+.works2-grid{
+  display: grid;                      /* Grid para organizar os cards */
+  grid-template-columns: repeat(2, 1fr);  /* 2 colunas iguais */
+  gap: 80px 60px;                     /* Espaço vertical e horizontal */
+  align-items: start;
+}
+
+.workcard{
+  margin: 0;
+}
+
+.workcard-media{
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.workcard-media img{
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* Imagem quadrada */
+  object-fit: cover;
+  display: block;
+}
+
+.workcard-meta{
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  gap: 14px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+/* Bolinha vermelha decorativa */
+.workcard-dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(190, 40, 40, 0.55);
+  margin-top: 10px;
+}
+
+.workcard-title{
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.workcard-year{
+  margin-top: 2px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.65);
+}
+
+.workcard-desc{
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: rgba(0,0,0,0.65);
+  line-height: 1.45;
+}
+
+/* Card alternativo (work-card) */
+.work-card img{
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.work-info{
+  margin-top: 14px;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Bolinha com position absolute */
+.work-dot{
+  position: absolute;
+  left: 0;
+  top: 6px;
+
+  width: 6px;
+  height: 6px;
+  background: #c65b5b;
+  border-radius: 50%;
+}
+
+.work-info h2{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.work-info .year{
+  margin: 4px 0;
+  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+}
+
+.work-info .desc{
+  margin: 0;
+  font-size: 14px;
+  color: rgba(0,0,0,0.8);
+}
+
+.works-footer{
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* Responsivo: em ecrãs pequenos muda para 1 coluna */
+@media (max-width: 900px){
+  .works2-shell{
+    padding: 36px 28px 46px;
+  }
+
+  .works2-grid{
+    grid-template-columns: 1fr;  /* Muda para 1 coluna */
+    gap: 60px;
+  }
+
+  .works2-title{
+    font-size: 44px;
+  }
+}
+
+/* -------------------------------------SHELL (container genérico reaproveitável) ----------------------------------------- */
+
+.shell{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;  /* Centraliza horizontalmente */
+  padding: 46px 70px 60px;
+}
+
+@media (max-width: 900px){
+  .shell{
+    padding: 36px 28px 46px;
+  }
+}
+
+/* ---------------------------------------------- PÁGINA | INKSPACE ---------------------------------------------- */
+
+.inkspace-page{
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* Header com flexbox: logo à esquerda, burger à direita */
+.inkspace-header{
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 46px 0;
+  padding-bottom: 0px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inkspace-page .logo{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(0,0,0,0.08);
+}
+.inkspace-page .logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: static;
+}
+
+.inkspace-header .burger{
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.inkspace-header .burger summary{
+  list-style: none;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+  user-select: none;
+}
+
+.inkspace-header .burger-menu{
+  position: absolute;
+  top: 44px;
+  right: 0;
+  
+  background: #fff;
+  width: 160px;
+  padding: 12px 0;
+  
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  
+  display: none;
+}
+
+.inkspace-header .burger[open] .burger-menu{
+  display: block;
+}
+
+.inkspace-header .burger-menu a,
+.inkspace-header .burger-menu span{
+  display: block;
+  padding: 10px 16px;
+  
+  font-size: 14px;
+  text-decoration: none;
+  color: #111;
+}
+
+.inkspace-header .burger-menu a:hover{
+  background: rgba(0,0,0,0.05);
+}
+
+.inkspace-header .burger-menu .disabled{
+  color: rgba(0,0,0,0.35);
+  cursor: not-allowed;
+}
+
+.inkspace-main{
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 40px 0 60px;
+  flex: 1;
+}
+
+/* ---------- BLOCO 1 (hero 2 colunas com grid) ---------- */
+
+.inkspace-hero{
+  display: grid;                         /* Grid para 2 colunas */
+  grid-template-columns: 1.1fr 0.9fr;    /* Texto maior que imagem */
+  gap: 80px;
+  align-items: start;
+  padding: 10px 0 30px;
+}
+
+.inkspace-title{
+  margin: 0;
+  line-height: 1;
+}
+
+.inkspace-kicker{
+  display: block;
+  font-size: 58px;
+  font-weight: 300;
+}
+
+.inkspace-title strong{
+  display: block;
+  font-size: 58px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.inkspace-year{
+  margin: 18px 0 22px;
+  font-weight: 700;
+}
+
+.inkspace-lead{
+  max-width: 520px;
+  line-height: 1.7;
+  color: #222;
+}
+
+.inkspace-hero-media{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inkspace-video{
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #000;
+}
+
+.inkspace-hero-media .inkspace-video{
+  max-width: 520px;
+  aspect-ratio: 16 / 10;
+}
+
+/* ---------- BLOCO 2 (vídeo wide) ---------- */
+
+.inkspace-wide{
+  padding: 10px 0 34px;
+}
+
+.inkspace-video--wide{
+  width: 100%;
+  aspect-ratio: 21 / 9;  /* Vídeo panorâmico */
+}
+
+/* ---------- BLOCO 3 (texto 2 colunas com grid) ---------- */
+
+.inkspace-two-col{
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 80px;
+  align-items: start;
+  padding: 20px 0 34px;
+}
+
+.inkspace-body p{
+  margin: 0;
+  line-height: 1.7;
+  color: #222;
+}
+
+.inkspace-aside p{
+  margin: 0 0 16px;
+  line-height: 1.7;
+  color: #222;
+}
+
+/* ---------- BLOCO 4 (grid de 2 itens) ---------- */
+
+.inkspace-grid-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 colunas iguais */
+  gap: 40px;
+
+  padding: 10px 0 20px;
+  margin-top: 80px;
+}
+
+.inkspace-video--square{
+  aspect-ratio: 1 / 1;  /* Vídeo quadrado */
+}
+
+/* ---------- IMAGENS (Inkspace) ---------- */
+
+.inkspace-img{
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.inkspace-img--hero{
+  max-width: 520px;
+  aspect-ratio: 16 / 10;
+}
+
+.inkspace-img--square{
+  aspect-ratio: 9 / 16;  /* Vertical tipo telemóvel */
+}
+
+.inkspace-vertical{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  background: #000;
+}
+
+/* Frame vertical para vídeos */
+.ink-vertical{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #000;
+}
+
+.ink-vertical__video{
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: contain;  /* Não corta, mostra tudo */
+  object-position: center;
+}
+
+/* ---------- BLOCO "INK..." (parte alternativa) ---------- */
+
+.ink-body{
+  width: min(1200px, 92%);
+  margin: 40px auto 0;
+}
+
+.ink-body p{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #111;
+}
+
+/* 2 colunas com grid */
+.ink-two-cols{
+  width: min(1200px, 92%);
+  margin: 34px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.ink-media{
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ink-media img,
+.ink-media video{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.ink-caption{
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.75);
+}
+
+.ink-caption .caps{
+  letter-spacing: .08em;
+  font-size: 11px;
+  color: rgba(0,0,0,0.55);
+}
+
+.ink-caption a{
+  color: #111;
+  text-decoration: none;
+}
+
+/* Fonte "Give You Glory" (coloque GiveYouGlory.woff2 / .woff em ../fonts/) */
+@font-face{
+  font-family: "Give You Glory";
+  src: url("../fonts/GiveYouGlory.woff2") format("woff2"),
+       url("../fonts/GiveYouGlory.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Wrapper que alinha o texto (vertical) imediatamente acima do botão */
+.hero-group{
+  position: absolute;
+  right: 260px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;   /* empilha verticalmente: cada palavra numa linha */
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+}
+
+/* Labels em coluna — cada palavra numa linha, tamanho 36 */
+.hero-labels{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Força cada span a comportar-se como linha */
+.hero-labels span{
+  display: block;
+}
+
+/* Aplica a fonte especial apenas à palavra "Juntos." */
+.hero-labels .give-you{
+  font-family: "Give You Glory", "Montserrat", serif;
+  font-size: 30px;
+  line-height: 1;
+}
+
+/* Botão posicionado dentro do fluxo do .hero-group (fica abaixo do texto) */
+.hero-cta{
+  position: relative;
+  display: inline-block;
+
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  background:  #cc4700;
+  color: #ffffff;
+  border: oldlace 0.5px solid;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hover simples */
+.hero-cta:hover{
+  background: rgba(255, 255, 255, 0.96);
+}
+
+/* Mobile: centraliza bloco (texto + botão) em baixo */
+@media (max-width: 768px){
+  .hero-group{
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 90px;
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
+/* Ajusta o posicionamento e tamanho do grupo hero */
+.hero-group{
+  position: absolute;
+  right: 320px;        /* Mais para a esquerda */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Alinha tudo à esquerda */
+  gap: 20px;
+  z-index: 20;
+}
+
+/* Labels em coluna — texto menor e alinhado à esquerda */
+.hero-labels{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;  /* Alinha à esquerda */
+  color: #ffffff;
+  font-size: 30px;          /* Texto um pouco menor */
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Força cada span a comportar-se como linha */
+.hero-labels span{
+  display: block;
+}
+
+/* Aplica a fonte especial apenas à palavra "Juntos." */
+.hero-labels .give-you{
+  font-family: "Give You Glory", "Montserrat", serif;
+  font-size: 33px;
+  line-height: 1.1;
+}
+
+/* Botão - agora alinhado à esquerda também */
+.hero-cta{
+  position: relative;
+  display: inline-block;
+
+  padding: 14px 32px;
+  border-radius: 999px;
+
+  background: #cc4700;
+  color: #ffffff;
+  border: oldlace 0.5px solid;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: 15px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Hover simples */
+.hero-cta:hover{
+  background: #e05000;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}

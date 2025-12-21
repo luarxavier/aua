@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap" rel="stylesheet">
+  <title>Works</title>
+</head>
+
+<body class="works2-page">
+
+  <!-- Container que centraliza tudo -->
+  <div class="works2-shell">
+
+    <!-- Header com logo+título à esquerda e burger à direita -->
+    <!-- Flexbox com space-between empurra os dois para lados opostos -->
+    <header class="works2-header">
+      
+      <!-- Grupo logo + título (também usa flexbox para ficarem lado a lado) -->
+      <div class="works2-brand">
+        <!-- Logo clicável -->
+        <a href="index.html" >
+          <img class="works2-logo" src="Imagens/logoz.png" alt="Logotipo">
+        </a>
+        
+        <h1 class="works2-title">Works</h1>
+      </div>
+
+      <!-- Menu hambúrguer à direita -->
+      <details class="works2-burger">
+        <summary aria-label="Menu">&#9776;</summary>
+
+        <!-- Dropdown que abre ao clicar -->
+        <div class="works2-burgerMenu">
+          <a href="works.html">Work</a>
+          <span class="disabled">About</span>
+          <span class="disabled">Contact</span>
+        </div>
+      </details>
+    </header>
+
+    <main class="works2-main">
+
+      <!-- Grid de trabalhos em 2 colunas -->
+      <!-- Usei CSS Grid (grid-template-columns: repeat(2, 1fr)) -->
+      <section class="works2-grid">
+
+        <!-- Cada card de trabalho tem imagem + info -->
+        <article class="work-card">
+          <img src="Imagens/landlines.png" alt="Land Lines">
+          
+          <!-- Info com bolinha vermelha à esquerda -->
+          <div class="work-info">
+            <span class="work-dot"></span>
+            <h2>Land Lines</h2>
+            <p class="year">2016</p>
+            <p class="desc">Visual exploration of geographic data.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <img src="Imagens/masquelacara.jpg" alt="Mas Que la Cara">
+          <div class="work-info">
+            <span class="work-dot"></span>
+            <h2>Mas Que la Cara</h2>
+            <p class="year">2016</p>
+            <p class="desc">Motion-responsive face installation.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <img src="Imagens/hagseed.jpg" alt="Hag-Seed">
+          <div class="work-info">
+            <span class="work-dot"></span>
+            <h2>Hag-Seed</h2>
+            <p class="year">2016</p>
+            <p class="desc">Interactive literary installation.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <img src="Imagens/reflectionstudies.jpg" alt="Reflection Studies">
+          <div class="work-info">
+            <span class="work-dot"></span>
+            <h2>Reflection Studies</h2>
+            <p class="year">2016</p>
+            <p class="desc">Interactive light simulation.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <a href="inkspace.html">
+            <img src="Imagens/inkspace.jpg" alt="Ink Space">
+          </a>
+          <div class="work-info">
+            <span class="work-dot"></span>
+            <h2>Ink Space</h2>
+            <p class="year">2015</p>
+            <p class="desc">3D motion drawing tool.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <img src="Imagens/recoded.jpg" alt="Re-coded">
+          <div class="work-info">
+            <span class="work-dot"></span>
+            <h2>Re-coded</h2>
+            <p class="year">2015</p>
+            <p class="desc">Re-coded media artworks.</p>
+          </div>
+        </article>
+
+      </section>
+
+    </main>
+
+    <!-- Footer no fim -->
+    <footer class="works-footer">
+      <p>© 2025 Zach Lieberman</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
