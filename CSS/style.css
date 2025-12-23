@@ -41,7 +41,7 @@ body{
 .menu .logo{
   width: 56px;
   height: 56px;
-  border-radius: 999px;
+  
   overflow: hidden;
   
 }
@@ -850,9 +850,7 @@ body{
 
 /* Responsivo */
 @media (max-width: 900px){
-  .contactos-container{
-    
-  }
+  
   
   .contactos-title{
     font-size: 36px;
@@ -916,3 +914,6 @@ body{
   .patas-container{ gap: 10px; flex-wrap: wrap; }
   .pata{ max-height: 64px; }
 }
+
+/* ------------------------------------------ Termos de uso ------------------------------------------------------*/
+

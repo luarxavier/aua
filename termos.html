@@ -7,82 +7,97 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900&display=swap" rel="stylesheet">
-  <title>Works</title>
+  <title>Termos de Uso</title>
 </head>
 
-<body class="works-page">
+<body class="termos-page">
 
   <!-- Container principal que centraliza tudo na página -->
   <div class="shell">
 
     <!-- Header com logo à esquerda e menu burger à direita -->
     <!-- Usei flexbox com justify-content: space-between aqui -->
-    <header class="works-header">
-       <!-- Logo clicável que volta para a home -->
-       <a href="index.html" >
-          <img class="works2-logo" src="Imagens/logoz.png" alt="Logotipo">
-        </a>
-       
-       <!-- Menu hambúrguer (aquelas 3 linhas) -->
-       <!-- O details/summary faz abrir e fechar ao clicar -->
-      <details class="burger">
-        <summary aria-label="Menu">&#9776;</summary>
+    <header class="works-header menu">
+      <a href="index.html" class="logo">
+        <img src="Imagens/logo.png" alt="Logotipo">
+      </a>
 
-        <!-- Dropdown que aparece quando clico no burger -->
-        <div class="burger-menu">
-          <a href="works.html">Work</a>
-          <span class="disabled">About</span>
-          <span class="disabled">Contact</span>
-        </div>
-      </details>
+      <ul class="menuT">
+        <li class="bt"><a href="index.html">Início</a></li>
+        <li class="bt"><a href="sobre.html">Sobre</a></li>
+        <li class="bt"><a href="contactos.html">Contactos</a></li>
+        <li class="bt"><a href="ajuda.html">Como Ajudar</a></li>
+
+        <li class="dropdown bt">
+          <a href="#">Mais ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="denuncias.html">Denúncias</a></li>
+            <li><a href="politica.html">Política de Privacidade</a></li>
+            <li><a href="termos.html">Termos de Uso</a></li>
+          </ul>
+        </li>
+      </ul>
     </header>
 
-    <!-- Navegação secundária (links em linha) -->
-    <!-- Também usa flexbox para colocar os links lado a lado -->
-    <nav class="works-nav">
-      <a href="index.html">Projects</a>
-      <a href="#">YesYesNo</a>
-      <a href="#">Online Store</a>
-      <a href="#">Exhibitions</a>
-    </nav>
+    <main class="terms-content">
+      <h1>Termos de Uso</h1>
+      <p class="project-name"><strong>Achei Um Amigo (AUA)</strong></p>
+      <p><strong>Última atualização:</strong> [coloque a data]</p>
 
-    <!-- Conteúdo principal em 2 colunas: texto + vídeo -->
-    <!-- Usei CSS Grid aqui (grid-template-columns) para dividir o espaço -->
-    <main class="works-main">
-      
-      <!-- Coluna da esquerda: texto -->
-      <section class="works-text">
-        <h1 class="works-title"><span>Main</span> <strong>Works</strong></h1>
+      <p>Ao aceder ao site da Achei Um Amigo (AUA), concorda com os presentes Termos de Uso. Caso não concorde com algum dos termos aqui descritos, recomendamos que não utilize este website.</p>
 
-        <p>
-          Each work here is an experiment — a conversation between art and code.
-          Projects that explore movement, light, and interaction, questioning what
-          becomes possible when human gesture meets algorithm.
-        </p>
+      <h2>1. Sobre a AUA</h2>
+      <p>A Achei Um Amigo (AUA) é uma plataforma de caráter informativo e institucional, criada para promover a visibilidade, o registo e o cuidado coletivo de animais em situação de rua, bem como para facilitar a comunicação entre cidadãos, cuidadores, protetores e instituições.</p>
+      <p>A AUA não é um abrigo, não realiza resgates diretos nem substitui o trabalho de organizações ou indivíduos que atuam no terreno.</p>
 
-        <p>
-          Among exhibitions, collaborations, and independent creations, this space
-          gathers the pieces that best represent the ongoing search for new ways
-          to see and feel the digital.
-        </p>
+      <h2>2. Utilização do site</h2>
+      <p>O conteúdo disponibilizado neste website destina-se exclusivamente a fins informativos. O utilizador compromete-se a utilizar o site de forma responsável, ética e em conformidade com a legislação aplicável.</p>
+      <p>É proibida a utilização do site para fins ilícitos, abusivos ou que possam causar prejuízo à AUA ou a terceiros.</p>
 
-        <a class="works-cta" href="works2.html">See &gt;</a>
-      </section>
+      <h2>3. Conteúdos e responsabilidade</h2>
+      <p>A AUA procura garantir que as informações apresentadas no site sejam claras e atualizadas. No entanto, não garante a total exatidão, completude ou atualidade de todos os conteúdos.</p>
+      <p>A AUA não se responsabiliza por decisões tomadas com base nas informações disponibilizadas no site, nem por eventuais danos diretos ou indiretos decorrentes da sua utilização.</p>
 
-      <!-- Coluna da direita: vídeo em loop -->
-      <section class="works-media">
-        <video autoplay muted loop playsinline preload="auto">
-          <source src="Imagens/video.mp4" type="video/mp4">
-        </video>
-      </section>
+      <h2>4. Propriedade intelectual</h2>
+      <p>Todos os conteúdos presentes neste site — incluindo textos, imagens, identidade visual e marca — são propriedade da Achei Um Amigo ou utilizados com autorização, estando protegidos por direitos de autor.</p>
+      <p>Não é permitida a reprodução, distribuição ou utilização de qualquer conteúdo sem autorização prévia, salvo nos casos legalmente previstos.</p>
+
+      <h2>5. Ligações para terceiros</h2>
+      <p>O site pode conter ligações para websites de terceiros. A AUA não se responsabiliza pelos conteúdos, políticas ou práticas desses sites externos.</p>
+
+      <h2>6. Alterações aos Termos</h2>
+      <p>A AUA reserva-se o direito de modificar estes Termos de Uso a qualquer momento, sem aviso prévio. Recomenda-se a consulta periódica desta página.</p>
+
+      <h2>7. Contactos</h2>
+      <p>Para qualquer questão relacionada com estes Termos de Uso, poderá entrar em contacto através de:</p>
+      <p><strong>Email:</strong> contacto@aua.pt</p>
     </main>
 
-    <!-- Footer simples no fim da página -->
-    <footer class="works-footer">
-      <p>© 2025 Zach Lieberman</p>
+    <footer class="site-footer">
+      <!-- Footer simples; ajuste conforme necessário -->
     </footer>
 
   </div>
 
 </body>
 </html>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="footer-brand">Achei Um Amigo</div>
+      <a href="mailto:contacto@aua.pt" class="footer-contact">contacto@aua.pt</a>
+      <div class="footer-region">Portalegre, Portugal</div>
+    </div>
+
+    <div class="footer-right">
+      <nav class="footer-links">
+        <a href="termos.html" class="footer-link" target="_blank" rel="noopener">Termos de Uso</a>
+        <span class="footer-sep">·</span>
+        <a href="politica.html" class="footer-link" target="_blank" rel="noopener">Política de Privacidade</a>
+      </nav>
+
+      <div class="footer-copy">© 2025 Achei Um Amigo</div>
+    </div>
+  </div>
+</footer>
