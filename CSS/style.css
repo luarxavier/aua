@@ -155,7 +155,7 @@ body{
   height: 100vh;  /* Altura toda do ecrã */
   position: relative;
 
-  /* background-image: url("../imagens/fundo6.jpg"); */
+  background-image: url("../Imagens/fundo6.jpg");
   background-size: cover;       /* Preenche sem distorcer */
   background-position: center;
 }
