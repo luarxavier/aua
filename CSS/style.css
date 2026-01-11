@@ -900,8 +900,30 @@ body{
 }
 
 .politica-page main {
-    margin-top: 160px; /* Espaçamento entre o menu e o conteúdo */
+    margin-top: 160px; 
     flex: 1;
+}
+
+/* Estilo específico para a página termos.html */
+.termos-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.termos-page .menu {
+    background-color: #f5f5f5;
+    color: #fff;
+}
+
+.termos-page .menu .bt a {
+    color: #6f2200;
+    text-decoration: none;
+}
+
+.termos-page main {
+    flex: 1; 
+    margin-top: 160px;
 }
 
 /* cada imagem de pata */
